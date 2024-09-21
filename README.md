@@ -69,8 +69,6 @@
 [![asciicast](https://asciinema.org/a/zRDAZJ0flbzO9ILEhEoNBz83U.svg)](https://asciinema.org/a/zRDAZJ0flbzO9ILEhEoNBz83U)
 </li>
 </ul>
-Различия между плоскими файлами формата JSON
-[![asciicast](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo.svg)](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo)
 
 Различия между плоскими файлами формата YML
 [![asciicast](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X.svg)](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X)
