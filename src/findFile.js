@@ -21,10 +21,6 @@ function findFile(searchPath, filename) {
 
   search(searchPath);
 
-  if (results.length === 0) {
-    throw new Error(`File ${filename} not found in directory ${searchPath}`);
-  }
-
   return results[0]; // Возвращаем путь к первому найденному файлу
 }
 
