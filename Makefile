@@ -1,5 +1,7 @@
 install:
 	npm ci
+link:
+	sudo npm link
 gendiff:
 	node bin/gendiff.js
 lint: 
@@ -7,4 +9,4 @@ lint:
 test:
 	npm test
 test-coverage:
-	npm test -- --coverage --coverageProvider=v8
+	npm run test:coverage
