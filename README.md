@@ -14,7 +14,7 @@
 <li>Генерация отчета в виде plain text, stylish и json</li>
 </ul>
 
-Для работы с проектом необходимо:
+<h5>Для работы с проектом необходимо:</h5>
 
 1. Склонировать репозиторий, одной из команд:
 <pre>
@@ -38,7 +38,7 @@
   </code>
 </pre>
 
-Команды
+<h6>Команды</h6>
 <ul>
 <li> Вывод справочной информации по утилите:<pre>
   <code>
@@ -49,26 +49,27 @@
   <code>
     >> gendiff file1.json file2.json
   </code>
-</pre>[![asciicast](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo.svg)](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo)</li>
+</pre></li>
 <li>Вывод различий между файлами формата YML<pre>
   <code>
     >> gendiff file1.yml file2.yml
   </code>
-</pre>[![asciicast](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X.svg)](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X)</li>
+</pre></li>
 <li>Вывод информации сравнения в формате Plain<pre>
   <code>
     >> gendiff --format plain file1.json file2.json
   </code>
-</pre>[![asciicast](https://asciinema.org/a/br2khkyjHTOGoG0NANFKH6t68.svg)](https://asciinema.org/a/br2khkyjHTOGoG0NANFKH6t68)
+</pre>
 </li>
 <li>Вывод в формате json<pre>
   <code>
     >> gendiff --format json file1.json file2.json
   </code>
 </pre>
-[![asciicast](https://asciinema.org/a/zRDAZJ0flbzO9ILEhEoNBz83U.svg)](https://asciinema.org/a/zRDAZJ0flbzO9ILEhEoNBz83U)
 </li>
 </ul>
+Различия между плоскими файлами формата JSON
+[![asciicast](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo.svg)](https://asciinema.org/a/pvf4Z0bUSBj8ac81F2vVQuqzo)
 
 Различия между плоскими файлами формата YML
 [![asciicast](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X.svg)](https://asciinema.org/a/Sl2tYRWVSzw8P9yrwruIAVb5X)

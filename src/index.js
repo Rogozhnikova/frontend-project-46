@@ -11,9 +11,6 @@ const genDiff = (fileName1, fileName2, format) => {
   const pathToFile1 = findFile(process.cwd(), fileName1);
   const pathToFile2 = findFile(process.cwd(), fileName2);
 
-  console.log('Path to file 1:', pathToFile1);
-  console.log('Path to file 2:', pathToFile2);
-
   const file1 = parse(readFileSync(pathToFile1), path.extname(fileName1));
   const file2 = parse(readFileSync(pathToFile2), path.extname(fileName2));
 
