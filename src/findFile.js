@@ -12,16 +12,16 @@ function findFile(searchPath, filename) {
       const stat = fs.statSync(filePath);
 
       if (stat && stat.isDirectory()) {
-        search(filePath); // Рекурсивный вызов для подкаталогов
+        search(filePath);
       } else if (file === filename) {
-        results.push(filePath); // Добавляем найденный файл
+        results.push(filePath);
       }
     }
   }
 
   search(searchPath);
 
-  return results[0]; // Возвращаем путь к первому найденному файлу
+  return results[0];
 }
 
 export default findFile;

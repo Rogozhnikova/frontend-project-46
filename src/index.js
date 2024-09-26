@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import path, { resolve } from 'path';
+import path from 'path';
 import process from 'process';
 import buildTree from './buildTree.js';
 import parse from './parsers.js';
