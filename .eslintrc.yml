@@ -1,14 +1,17 @@
 plugins: 
   - jest
+  - fp
 
 env:
   browser: true
   es2021: true
   jest: true
+  node: true
 extends: 
   - 'eslint:recommended'
   - 'airbnb-base'
   - 'plugin:jest/recommended'
+  - "plugin:fp/recommended"
 overrides: []
 globals: {
        describe: readonly,
