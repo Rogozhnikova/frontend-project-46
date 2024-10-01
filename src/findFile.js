@@ -7,21 +7,21 @@ function findFile(searchPath, filename) {
   function search(dir) {
     const files = fs.readdirSync(dir);
 
-    for (const file of files) {
+    files.forEach((file) => {
       const filePath = path.join(dir, file);
       const stat = fs.statSync(filePath);
 
       if (stat && stat.isDirectory()) {
-        search(filePath);
+        search(filePath); // Рекурсивный вызов
       } else if (file === filename) {
         results.push(filePath);
       }
-    }
+    });
   }
 
   search(searchPath);
 
-  return results[0];
+  return results[0]; // Возвращаем первый найденный файл
 }
 
 export default findFile;
