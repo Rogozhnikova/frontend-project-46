@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/Rogozhnikova/frontend-project-46.git"
   },
+  "bugs": {
+    "url": "https://github.com/Rogozhnikova/frontend-project-46/issues"
+  },
   "author": "Alina",
   "license": "ISC",
   "dependencies": {
