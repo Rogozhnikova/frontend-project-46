@@ -11,12 +11,6 @@ const getFixtureFile = (filename) => path.join(__dirname, '../__fixtures__', fil
 
 const readFile = (filename) => readFileSync(getFixtureFile(filename), 'utf-8');
 
-const file1JSON = getFixtureFile('file3.json');
-const file2JSON = getFixtureFile('file4.json');
-
-const file1YML = getFixtureFile('file3.yml');
-const file2YML = getFixtureFile('file4.yml');
-
 describe('test sylish', () => {
   test('default', () => {
     expect(genDiff('file3.json', 'file4.json')).toBe(readFile('stylish.txt'));
