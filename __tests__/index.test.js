@@ -26,5 +26,6 @@ describe('test sylish', () => {
   });
   test('json', () => {
     expect(genDiff('file3.json', 'file4.json', 'json')).toBe(readFile('json.txt'));
+    expect(genDiff('file3.yml', 'file4.yml', 'json')).toBe(readFile('json.txt'));
   });
 });
