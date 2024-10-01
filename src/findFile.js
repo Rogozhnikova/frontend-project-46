@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 function findFile(searchPath, filename) {
-  let results = [];
+  const results = [];
 
   function search(dir) {
     const files = fs.readdirSync(dir);

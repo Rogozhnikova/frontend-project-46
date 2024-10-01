@@ -6,7 +6,6 @@ import parse from './parsers.js';
 import formatter from './formaters/formatters.js';
 import findFile from './findFile.js';
 
-
 const genDiff = (fileName1, fileName2, format) => {
   const pathToFile1 = findFile(process.cwd(), fileName1);
   const pathToFile2 = findFile(process.cwd(), fileName2);
