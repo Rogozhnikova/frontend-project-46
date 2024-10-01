@@ -8,17 +8,21 @@
   },
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rogozhnikova/frontend-project-46.git"
   },
+  "homepage": "https://github.com/Rogozhnikova/frontend-project-46#readme",
   "bugs": {
     "url": "https://github.com/Rogozhnikova/frontend-project-46/issues"
   },
   "author": "Alina",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
   "dependencies": {
     "commander": "^12.1.0",
     "file-system": "^2.2.2",
