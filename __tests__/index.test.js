@@ -11,28 +11,22 @@ const getFixtureFile = (filename) => path.join(__dirname, '../__fixtures__', fil
 
 const readFile = (filename) => readFileSync(getFixtureFile(filename), 'utf-8');
 
-const file1JSON = getFixtureFile('file3.json');
-const file2JSON = getFixtureFile('file4.json');
-
-const file1YML = getFixtureFile('file3.yml');
-const file2YML = getFixtureFile('file4.yml');
-
 describe('test sylish', () => {
   test('default', () => {
-    expect(genDiff(file1JSON, file2JSON)).toBe(readFile('stylish.txt'));
-    expect(genDiff(file1YML, file2YML)).toBe(readFile('stylish.txt'));
+    expect(genDiff('file3.json', 'file4.json')).toBe(readFile('stylish.txt'));
+    expect(genDiff('file3.yml', 'file4.yml')).toBe(readFile('stylish.txt'));
   });
   test('stylish', () => {
-    expect(genDiff(file1JSON, file2JSON, 'stylish')).toBe(readFile('stylish.txt'));
-    expect(genDiff(file1YML, file2YML, 'stylish')).toBe(readFile('stylish.txt'));
+    expect(genDiff('file3.json', 'file4.json', 'stylish')).toBe(readFile('stylish.txt'));
+    expect(genDiff('file3.yml', 'file4.yml', 'stylish')).toBe(readFile('stylish.txt'));
   });
   test('plain', () => {
-    expect(genDiff(file1JSON, file2JSON, 'plain')).toBe(readFile('plain.txt'));
-    expect(genDiff(file1YML, file2YML, 'plain')).toBe(readFile('plain.txt'));
+    expect(genDiff('file3.json', 'file4.json', 'plain')).toBe(readFile('plain.txt'));
+    expect(genDiff('file3.yml', 'file4.yml', 'plain')).toBe(readFile('plain.txt'));
   });
   test('json', () => {
-    expect(genDiff(file1JSON, file2JSON, 'json')).toBe(readFile('json.txt'));
-    expect(genDiff(file1YML, file2YML, 'json')).toBe(readFile('json.txt'));
+    expect(genDiff('file3.json', 'file4.json', 'json')).toBe(readFile('json.txt'));
+    expect(genDiff('file3.yml', 'file4.yml', 'json')).toBe(readFile('json.txt'));
   });
   test('non-existent files', () => {
     expect(() => genDiff('nonexistent1.json', 'nonexistent2.json')).toThrow();
