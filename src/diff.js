@@ -28,10 +28,19 @@ const compare = (file1, file2) => {
 
   const uniqueResults = _.uniq(result);
 
-  return uniqueResults.map((item) => item).sort((a, b) => {
-    if (a[3] < b[3]) return -1;
-    return 1;
+  const sortedResults = [];
+  uniqueResults.forEach((item) => {
+    // Здесь вы можете определить, как вы хотите отсортировать
+    // Например, добавим в отсортированный массив в зависимости от первого символа
+    const index = sortedResults.findIndex((sortedItem) => sortedItem[3] > item[3]);
+    if (index === -1) {
+      sortedResults.push(item); // Добавляем в конец, если не нашли
+    } else {
+      sortedResults.splice(index, 0, item); // Вставляем в нужное место
+    }
   });
+
+  return sortedResults;
 };
 
 export default compare;
