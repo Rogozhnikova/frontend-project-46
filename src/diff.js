@@ -26,7 +26,9 @@ const compare = (file1, file2) => {
     return acc; // Возвращаем аккумулятор без изменений
   }, []);
 
-  return _.uniq(result).slice().sort((a, b) => {
+  const uniqueResults = _.uniq(result);
+
+  return uniqueResults.map((item) => item).sort((a, b) => {
     if (a[3] < b[3]) return -1;
     return 1;
   });
