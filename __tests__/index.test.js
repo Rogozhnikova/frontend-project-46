@@ -18,25 +18,43 @@ const file1YML = getFixtureFile('file3.yml');
 const file2YML = getFixtureFile('file4.yml');
 
 describe('test sylish', () => {
-  test('default', () => {
-    expect(genDiff(file1JSON, file2JSON)).toBe(readFile('stylish.txt'));
-    expect(genDiff(file1YML, file2YML)).toBe(readFile('stylish.txt'));
+  const testCases = [
+    {
+      file1: file1JSON, file2: file2JSON, format: 'default', expected: readFile('stylish.txt'),
+    },
+    {
+      file1: file1YML, file2: file2YML, format: 'default', expected: readFile('stylish.txt'),
+    },
+    {
+      file1: file1JSON, file2: file2JSON, format: 'stylish', expected: readFile('stylish.txt'),
+    },
+    {
+      file1: file1YML, file2: file2YML, format: 'stylish', expected: readFile('stylish.txt'),
+    },
+    {
+      file1: file1JSON, file2: file2JSON, format: 'plain', expected: readFile('plain.txt'),
+    },
+    {
+      file1: file1YML, file2: file2YML, format: 'plain', expected: readFile('plain.txt'),
+    },
+    {
+      file1: file1JSON, file2: file2JSON, format: 'json', expected: readFile('json.txt'),
+    },
+    {
+      file1: file1YML, file2: file2YML, format: 'json', expected: readFile('json.txt'),
+    },
+  ];
+
+  test.each(testCases)('should generate diff for $file1 and $file2 in $format format', ({
+    file1, file2, format, expected,
+  }) => {
+    expect(genDiff(file1, file2, format)).toBe(expected);
   });
-  test('stylish', () => {
-    expect(genDiff(file1JSON, file2JSON, 'stylish')).toBe(readFile('stylish.txt'));
-    expect(genDiff(file1YML, file2YML, 'stylish')).toBe(readFile('stylish.txt'));
-  });
-  test('plain', () => {
-    expect(genDiff(file1JSON, file2JSON, 'plain')).toBe(readFile('plain.txt'));
-    expect(genDiff(file1YML, file2YML, 'plain')).toBe(readFile('plain.txt'));
-  });
-  test('json', () => {
-    expect(genDiff(file1JSON, file2JSON, 'json')).toBe(readFile('json.txt'));
-    expect(genDiff(file1YML, file2YML, 'json')).toBe(readFile('json.txt'));
-  });
+
   test('non-existent files', () => {
     expect(() => genDiff('nonexistent1.json', 'nonexistent2.json')).toThrow();
   });
+
   test('unsupported file format', () => {
     expect(() => genDiff('file3.txt', 'file4.txt')).toThrow();
   });

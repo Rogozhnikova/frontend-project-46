@@ -10,6 +10,8 @@ const formatter = (data, format = 'stylish') => {
       return plain(data);
     case 'json':
       return json(data);
+    case 'default':
+      return stylish(data);
     default: {
       throw new Error(`Unknown format: ${format}`);
     }
